@@ -1,0 +1,31 @@
+REM The virus! (For microsoft)
+REM Made by Lucas11 and for HackDucky.
+DEFAULT_DELAY 200
+REM Open Run dialog for Powershell
+GUI r
+DELAY 500
+
+REM Launch powershell
+STRING powershell
+ENTER
+DELAY 1000
+REM Install Steam and Librewolf.
+STRING winget install LibreWolf.LibreWolf
+ENTER
+DELAY 1000
+STRING Y
+ENTER
+STRING winget install --id Valve.Steam --exact
+ENTER
+DELAY 1000
+STRING Y
+ENTER
+STRING Start-Process "C:\Program Files\LibreWolf" "https://www.youtube.com/watch?v=YOpdr9-0IfM"
+ENTER
+ALT F4
+REM Open notepad and types Finished!
+GUI r
+STRING notepad
+ENTER
+STRING Finished! Thank you Chris Titus Tech for the Edge script and you for using it!
+ENTER

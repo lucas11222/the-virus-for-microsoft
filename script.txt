@@ -1,0 +1,81 @@
+REM The virus! (For microsoft)
+REM Made by Lucas11 and for HackDucky.
+DEFAULT_DELAY 200
+REM Open Run dialog for Powershell
+GUI r
+DELAY 500
+
+REM Launch powershell
+STRING powershell
+ENTER
+DELAY 1000
+
+REM Type the script for the deletion of Edge. (This uses the Winutill script by Chris Titus Tech, thank you!)
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\EdgeUpdate" -Name "CreateDesktopShortcutDefault" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "EdgeEnhanceImagesEnabled" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "PersonalizationReportingEnabled" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "ShowRecommendationsEnabled" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "HideFirstRunExperience" -Type DWord -Value 1;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "UserFeedbackAllowed" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "ConfigureDoNotTrack" -Type DWord -Value 1;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "AlternateErrorPagesEnabled" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "EdgeCollectionsEnabled" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "EdgeFollowEnabled" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "EdgeShoppingAssistantEnabled" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "MicrosoftEdgeInsiderPromotionEnabled" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "ShowMicrosoftRewards" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "WebWidgetAllowed" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "DiagnosticData" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "EdgeAssetDeliveryServiceEnabled" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "CryptoWalletEnabled" -Type DWord -Value 0;
+ENTER
+STRING Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "WalletDonationEnabled" -Type DWord -Value 0;
+ENTER
+STRING Write-Host \"Remove Copilot\" Get-Package | Where-Object Name -like '*copilot*';
+ENTER
+STRING Get-AppxPackage -AllUsers *Copilot* | Remove-AppxPackage -AllUsers;
+ENTER
+STRING Get-AppxProvisionedPackage -Online | Where-Object PackageName -like '*Copilot*' | Remove-AppxProvisionedPackage -Online;
+ENTER
+STRING dism /online /remove-package /package-name:Microsoft.Windows.Copilot
+ENTER
+DELAY 1000
+REM Install Steam and Librewolf.
+STRING winget install LibreWolf.LibreWolf
+ENTER
+DELAY 1000
+STRING Y
+ENTER
+STRING winget install --id Valve.Steam --exact
+ENTER
+DELAY 1000
+STRING Y
+ENTER
+STRING Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
+ENTER
+DELAY 10000
+STRING Start-Process "C:\Program Files\LibreWolf" "https://www.youtube.com/watch?v=YOpdr9-0IfM"
+ENTER
+ALT F4
+REM Open notepad and types Finished!
+GUI r
+STRING notepad
+ENTER
+STRING Finished! Thank you Chris Titus Tech for the Edge and Copilot script and you for using it!
+ENTER
